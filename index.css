@@ -2,6 +2,10 @@ body,#header,.leftheader,.rightheader,#logo,#nav,#content,#footer{
 	margin:0;
 	padding: 0;
 }
+body{
+	overflow-x: hidden;
+	min-width: 1125px;
+}
 #header{
 	height: 150px;
 }
@@ -60,14 +64,18 @@ body,#header,.leftheader,.rightheader,#logo,#nav,#content,#footer{
 #rightsider{
 	width:16px;
 	height: 100%;
-	float: right;
+	top:0;
+	right: 0;
+	position: absolute;
 
 }
 #siderbar{
 	/*float:right;*/
 	width:16px;
 	height: 85px;
-	margin-top: 230px;
+	position: absolute;
+	top:50%;
+	transform: translateY(-115%);
 	background-size: 16px 170px;
 }
 .siderbar_right{
@@ -86,6 +94,12 @@ body,#header,.leftheader,.rightheader,#logo,#nav,#content,#footer{
       width:666px;
       z-index: 1;
       box-shadow:10px 0 10px 0 rgba(0,0,0,0.1);
+     
+}
+#wholecontent{
+	overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
 }
 #headcontent{
 	width:650px;
@@ -123,7 +137,7 @@ body,#header,.leftheader,.rightheader,#logo,#nav,#content,#footer{
 }
 
 #midcontent{
-	width: 650px;
+	width: 666px;
 	height: 230px;
 }
 #midcontent_left{
@@ -139,16 +153,11 @@ body,#header,.leftheader,.rightheader,#logo,#nav,#content,#footer{
 	
 }
 #midcontent_left>div.leftcontentstyle1{
-	background-image: url(images/slide/20815.jpg);
-	 
-	
-		
+	background-image: url(images/slide/20815.jpg);		
 }
 #midcontent_left>div.leftcontentstyle2{
 	background-image: url(images/slide/23105.jpg);
-	 
-	 
-	 
+	 	 
 }
 #midcontent_left>div.leftcontentstyle3{
 	background-image: url(images/slide/16288.jpg);
@@ -165,7 +174,7 @@ body,#header,.leftheader,.rightheader,#logo,#nav,#content,#footer{
 }
 
 #midcontent_right{
-	width: 375px;
+	width: 391px;
 	height:230px;
 	float:left;
 	background-color: rgb(225,233,230);
@@ -191,7 +200,7 @@ body,#header,.leftheader,.rightheader,#logo,#nav,#content,#footer{
 	height: 16px;
 	line-height: 16px;
 	text-align: center;
-	
+	cursor:pointer;
 }
 #midhead ul .midheadstyle{
 	background-image: url(images/slide/8.png);
@@ -254,6 +263,152 @@ body,#header,.leftheader,.rightheader,#logo,#nav,#content,#footer{
 	margin-top:10px;
 	font-size: 14px;
 	color:#ccc;
+}
+
+#music-class{
+	width:600px;
+	height: 80px;
+	margin-top: 30px;
+	margin-left: 100px;
+}
+
+#music-class ul,li{
+  margin:0;
+  
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+#music-class ul{
+	margin-top: 10px;
+}
+#music-class li{
+	border-right: 1px solid #ccc;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 12px;
+	color:#888888;
+}
+#popMHz{
+	width:600px;
+	height: 20px;
+	margin-left: 100px;
+	margin-top:30px;
+}
+#popMHz .popular{
+	font-size: 14px;
+	float: left;
+}
+#popMHz .more{
+	font-size: 14px;
+	color: #888888;
+	float: left;
+	margin-left: 10px;
+}
+#popMHzcontent{
+	width: 600px;
+	height: 400px;
+	margin-left:100px;
+	margin-top:30px;
+}
+#popMHzcontent ul,li{
+	margin:0;
+	padding:0;
+}
+#popMHzcontent li{
+	margin-top:20px;
+	width: 200px;
+	height: 50px;
+	position: relative;
+}
+#popMHzcontent li .popMHz_introbox{
+	width: 250px;
+	position: absolute;
+	left:45px;
+	top:40px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	z-index: 222;
+	display: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-sizing: border-box;
+}
+#popMHzcontent li .popMHz_introbox .introstyle{
+	
+	height: 35px;
+	margin-top:10px;
+	border-bottom: 1px dashed #ccc;
+	
+}
+#popMHzcontent li .popMHz_introbox .musicstyle{
+	
+	height: 40px;
+	margin-top:10px;
+}
+#popMHzcontent li .popmusic_title{
+	font-size: 12px;
+}
+#popMHzcontent li .popmusic_example{
+	font-size: 12px;
+	color: #888888;
+}
+
+#popMHzcontent li .popMHz_img{
+	width: 45px;
+	height: 45px;
+	background-size: 45px 45px;
+	float: left;
+}
+#popMHzcontent li .popMHz_music{
+	width: 100px;
+	height: 45px;
+	float: left;
+	margin-left: 10px;
+}
+
+#popMHzcontent li .popMHz_name{
+	font-size: 14px;
+	width: 150px;
+	height: 20px;
+
+}
+#popMHzcontent li .popMHz_text{
+	font-size: 14px;
+	color: #888888;
+	width: 150px;
+	margin-top:5px;
+	height: 20px;
+}
+
+#popMHzcontent li .huayu{
+	background-image: url(images/slide/huayu.png);
+}
+#popMHzcontent li .oumei{
+	background-image: url(images/slide/oumei.png);
+}
+#popMHzcontent li .baling{
+	background-image: url(images/slide/baling.png);
+}
+#popMHzcontent li .kafei{
+	background-image: url(images/slide/kafei.png);
+}
+#popMHzcontent li .yueyu{
+	background-image: url(images/slide/yueyu.png);
+}
+#popMHzcontent li .popMHz_img_selected{
+
+	background-image: url(images/slide/07.png) /*!important*/;
+
+}
+
+#popMHzcontent .popMHz_left{
+     float: left;
+     width: 280px;
+}
+#popMHzcontent .popMHz_right{
+	float: left;
+    width: 280px;
 }
 
 #rightcontent{
