@@ -69,6 +69,7 @@ body{
 	position: absolute;
 
 }
+
 #siderbar{
 	/*float:right;*/
 	width:16px;
@@ -289,39 +290,39 @@ body{
 	font-size: 12px;
 	color:#888888;
 }
-#popMHz{
+.popMHz{
 	width:600px;
 	height: 20px;
 	margin-left: 100px;
 	margin-top:30px;
 }
-#popMHz .popular{
+.popMHz .popular{
 	font-size: 14px;
 	float: left;
 }
-#popMHz .more{
+.popMHz .more{
 	font-size: 14px;
 	color: #888888;
 	float: left;
 	margin-left: 10px;
 }
-#popMHzcontent{
+.popMHzcontent{
 	width: 600px;
-	height: 400px;
+	height: 340px;
 	margin-left:100px;
 	margin-top:30px;
 }
-#popMHzcontent ul,li{
+.popMHzcontent ul,li{
 	margin:0;
 	padding:0;
 }
-#popMHzcontent li{
+.popMHzcontent li{
 	margin-top:20px;
 	width: 200px;
 	height: 50px;
 	position: relative;
 }
-#popMHzcontent li .popMHz_introbox{
+.popMHzcontent li .popMHz_introbox{
 	width: 250px;
 	position: absolute;
 	left:45px;
@@ -334,46 +335,46 @@ body{
 	padding-right: 10px;
 	box-sizing: border-box;
 }
-#popMHzcontent li .popMHz_introbox .introstyle{
+.popMHzcontent li .popMHz_introbox .introstyle{
 	
 	height: 35px;
 	margin-top:10px;
 	border-bottom: 1px dashed #ccc;
 	
 }
-#popMHzcontent li .popMHz_introbox .musicstyle{
+.popMHzcontent li .popMHz_introbox .musicstyle{
 	
 	height: 40px;
 	margin-top:10px;
 }
-#popMHzcontent li .popmusic_title{
+.popMHzcontent li .popmusic_title{
 	font-size: 12px;
 }
-#popMHzcontent li .popmusic_example{
+.popMHzcontent li .popmusic_example{
 	font-size: 12px;
 	color: #888888;
 }
 
-#popMHzcontent li .popMHz_img{
+.popMHzcontent li .popMHz_img{
 	width: 45px;
 	height: 45px;
 	background-size: 45px 45px;
 	float: left;
 }
-#popMHzcontent li .popMHz_music{
+.popMHzcontent li .popMHz_music{
 	width: 100px;
 	height: 45px;
 	float: left;
 	margin-left: 10px;
 }
 
-#popMHzcontent li .popMHz_name{
+.popMHzcontent li .popMHz_name{
 	font-size: 14px;
 	width: 150px;
 	height: 20px;
 
 }
-#popMHzcontent li .popMHz_text{
+.popMHzcontent li .popMHz_text{
 	font-size: 14px;
 	color: #888888;
 	width: 150px;
@@ -381,32 +382,32 @@ body{
 	height: 20px;
 }
 
-#popMHzcontent li .huayu{
+.popMHzcontent li .huayu{
 	background-image: url(images/slide/huayu.png);
 }
-#popMHzcontent li .oumei{
+.popMHzcontent li .oumei{
 	background-image: url(images/slide/oumei.png);
 }
-#popMHzcontent li .baling{
+.popMHzcontent li .baling{
 	background-image: url(images/slide/baling.png);
 }
-#popMHzcontent li .kafei{
+.popMHzcontent li .kafei{
 	background-image: url(images/slide/kafei.png);
 }
-#popMHzcontent li .yueyu{
+.popMHzcontent li .yueyu{
 	background-image: url(images/slide/yueyu.png);
 }
-#popMHzcontent li .popMHz_img_selected{
+.popMHzcontent li .popMHz_img_selected{
 
 	background-image: url(images/slide/07.png) /*!important*/;
 
 }
 
-#popMHzcontent .popMHz_left{
+.popMHzcontent .popMHz_left{
      float: left;
      width: 280px;
 }
-#popMHzcontent .popMHz_right{
+.popMHzcontent .popMHz_right{
 	float: left;
     width: 280px;
 }
@@ -554,4 +555,125 @@ body{
 	margin-left: 550px;
 	font-size: 10px;
 	color:rgb(155,155,155);
+}
+#loginbox{
+	position:absolute;
+	left:400px;
+	top:180px;
+	z-index: 999;
+	/*display: none;*/
+	/*width: 500px;*/
+	
+}
+#loginbox .loginbox_left{
+	width: 300px;
+	height: 320px;
+	background-color: white;
+	float: left;
+
+}
+#loginbox .loginbox_contentleft{
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+/*#loginbox .loginhead{
+
+}*/
+#loginbox input.login_input{
+	width: 260px;
+	height: 35px;
+	border: 0;
+	background-color: rgb(237,241,240);
+	margin-top:20px;
+	padding-left:5px;
+}
+#loginbox .pwdbox{
+	overflow: hidden;
+}
+
+#loginbox .pwdbox>input{
+	margin-top:20px;
+	width: 125px;
+	height: 35px;
+	border: 0;
+	background-color: rgb(237,241,240);
+	float:left;
+	padding-left:5px;
+}
+#loginbox .pwdbox>img{
+	float:left;
+	margin-left:5px;
+	margin-top:20px;
+}
+#loginbox .autobox{
+	width: 260px;
+	margin-top:20px;
+	font-size: 10px;
+}
+#loginbox .autobox .checkboxstyle{
+	height: 35px;
+}
+/*#loginbox .autobox.checkboxstyle>input{
+	
+
+}
+#loginbox .autobox.checkboxstyle>label{
+
+}*/
+#loginbox .autobox .forget{
+	float: right;
+}
+#loginbox .loginfoot{
+	margin-top:20px;
+	background-color: rgb(138,216,198);
+	color:white;
+	margin-left: 155px;
+	width: 110px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+}
+#loginbox .loginbox_right{
+	width: 180px;
+	height: 320px;
+	background-color: rgb(90,90,90);
+	float: right;
+}
+#loginbox .loginbox_contentright{
+	margin-left:20px;
+	margin-top:20px;
+
+}
+
+#loginbox .otherstyle{
+	font-size:12px;
+	color:rgb(155,155,155);
+
+
+}
+
+#loginbox .socialstyle{
+	font-size:12px;
+	color:rgb(138,216,198);
+	margin-top:10px;
+
+}
+#loginbox .doubanfm{
+	margin-top:175px;
+	font-size:12px; 
+	color:rgb(155,155,155);
+
+
+}
+#loginbox .register{
+	margin-top:10px;
+	border:1px solid rgb(155,155,155);
+	width: 110px;
+	height: 30px;
+	line-height: 30px;
+	color:white;
+	padding-left:10px;
+
+
 }
