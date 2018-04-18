@@ -28,9 +28,21 @@ $(".popMHzcontent li").hover(function(){
 function(){
 	$(this).find('.popMHz_introbox').hide();
 	$(this).find('.popMHz_img').removeClass('popMHz_img_selected');
+});
+$("#login_enter").hover(function(){
+	$("#loginbox").show();
+});
+$(".loginbox_close").click(function(){
+	$("#loginbox").hide();
+
+});
+$("#content .share").hover(function(){
+	$("#content .share").animate({left:'830px',width:'260px'});
+	
+},
+function(){
+	$("#content .share").animate({left:'1024px',width:'60px'});
 }
 );
-// $("login_enter")
-
 
 });

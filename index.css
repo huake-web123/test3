@@ -496,9 +496,29 @@ body{
 #content .share{
 	position: absolute;
 	bottom:20px;
-	left:1000px;
+	left:1024px;
+	width: 60px;
+	overflow: hidden;
+	height: 20px; 
 	font-size: 10px;
 	color:rgb(155,155,155);
+}
+#content .share span{
+	height: 20px;
+	margin-left:10px;
+}
+#content .share_text{
+	width: 60px;
+	height: 20px;
+	line-height: 20px;
+	float: left;
+	cursor:pointer;
+
+}
+#content .share_img{
+	width: 190px;
+	float: left;
+	margin-left:10px;
 }
 
 #footer .icon{
@@ -561,7 +581,7 @@ body{
 	left:400px;
 	top:180px;
 	z-index: 999;
-	/*display: none;*/
+	display: none;
 	/*width: 500px;*/
 	
 }
@@ -640,9 +660,16 @@ body{
 	background-color: rgb(90,90,90);
 	float: right;
 }
+#loginbox .loginbox_close{
+	color:rgb(155,155,155);
+	float:right;
+	margin-right:10px;
+	margin-top:10px;
+	cursor: pointer;
+}
 #loginbox .loginbox_contentright{
 	margin-left:20px;
-	margin-top:20px;
+	margin-top:30px;
 
 }
 
@@ -650,8 +677,8 @@ body{
 	font-size:12px;
 	color:rgb(155,155,155);
 
-
 }
+
 
 #loginbox .socialstyle{
 	font-size:12px;
@@ -660,7 +687,7 @@ body{
 
 }
 #loginbox .doubanfm{
-	margin-top:175px;
+	margin-top:165px;
 	font-size:12px; 
 	color:rgb(155,155,155);
 
