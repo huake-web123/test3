@@ -513,7 +513,6 @@ body{
 	line-height: 20px;
 	float: left;
 	cursor:pointer;
-
 }
 #content .share_img{
 	width: 190px;
@@ -528,12 +527,16 @@ body{
 }
 #footer .icon .iconimg{
 	margin-left: 90px;
-	width: 96px;
-	height: 30px;
+	width: 92px;
+	height: 24px;
 	background-image:url(images/osicon_fm.png);
-	background-size: 96px 60px;
+	background-size: 92px 60px;
+	background-position: 0 0;
 }
-#footer .icon p{
+#footer .icon .iconimg.selected{
+	background-position: 0 -36px;
+}
+#footer .icon span{
 	float:left;
 	font-size: 10px;
 	color:rgb(155,155,155);

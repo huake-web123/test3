@@ -29,7 +29,7 @@ function(){
 	$(this).find('.popMHz_introbox').hide();
 	$(this).find('.popMHz_img').removeClass('popMHz_img_selected');
 });
-$("#login_enter").hover(function(){
+$("#login_enter").click(function(){
 	$("#loginbox").show();
 });
 $(".loginbox_close").click(function(){
@@ -37,12 +37,21 @@ $(".loginbox_close").click(function(){
 
 });
 $("#content .share").hover(function(){
-	$("#content .share").animate({left:'830px',width:'260px'});
+	$("#content .share").stop().animate({left:'830px',width:'260px'});
 	
 },
 function(){
-	$("#content .share").animate({left:'1024px',width:'60px'});
+	$("#content .share").stop().animate({left:'1024px',width:'60px'});
 }
+);
+
+$("#footer .icon .iconimg").hover(function(){
+	$(this).addClass('selected');
+},
+function(){
+	$(this).removeClass('selected');
+	}
+
 );
 
 });
