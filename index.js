@@ -47,6 +47,55 @@ $(document).ready(function(){
 	$(".loginbox_close").click(function(){
 		$("#loginbox").hide();
 	});
+	$("#addBanner").click(function(){
+		var arr = [1,2,3,4,5];
+		var str ='';
+		for(var i = 0;i<arr.length;i++){
+			var num = i +1;
+			if(num==5){
+				str += '<li  class="midheadstyle selected">'+ num +'</li>';
+			}
+			else{
+				str += '<li  class="midheadstyle">'+ num +'</li>';
+			}
+		}
+		$('#midhead>ul').html(str);
+
+		$.get("http://restaurant.yijiahotel.shop/test/musicbanners",function(result,status){
+			result;
+			var arr1 = result.data;
+			var str1 = '';
+			for(var i=0;i<arr1.length;i++){
+			if(i!=4){	
+				str1 +='<div >'+
+												'<div class="MHz_style">'+
+													'<div class="MHz_text">'+result.data[i].title+'</div>'+
+													'<div class="MHz_img"></div>'+
+												'</div>'+
+												'<div class="pro_style">'+result.data[i].subtitle+'</div>'+
+												'<div class="popmusic">热门歌曲:</div>'+
+												'<div class="musictext">'+result.data[i].songsCounts+'首歌曲兆赫详情</div>'+
+										   
+							'</div>';
+					}
+			else{
+
+				str1 +='<div class="MHz_show">'+
+												'<div class="MHz_style">'+
+													'<div class="MHz_text">'+result.data[i].title+'</div>'+
+													'<div class="MHz_img"></div>'+
+												'</div>'+
+												'<div class="pro_style">'+result.data[i].subtitle+'</div>'+
+												'<div class="popmusic">热门歌曲:</div>'+
+												'<div class="musictext">'+result.data[i].songsCounts+'首歌曲兆赫详情</div>'+
+										   
+							'</div>';
+				}
+			}
+			
+			$('#midrightcontent').html(str1);
+		});
+	});
 
 	$("#content .share").hover(function(){
 		$("#content .share").stop().animate({left:'830px',width:'260px'});
