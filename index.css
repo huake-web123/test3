@@ -151,28 +151,13 @@ body{
 	height:230px;
 	background-size: 290px 230px;
 	display: none;
-	
 }
-#midcontent_left>div.leftcontentstyle1{
-	background-image: url(images/slide/20815.jpg);		
-}
-#midcontent_left>div.leftcontentstyle2{
-	background-image: url(images/slide/23105.jpg);
-	 	 
-}
-#midcontent_left>div.leftcontentstyle3{
-	background-image: url(images/slide/16288.jpg);
-	 
-	 
-}
-#midcontent_left>div.leftcontentstyle4{
-	background-image: url(images/slide/17981.jpg);
-	 	 
-}
-#midcontent_left>div.leftcontentstyle5{
-	background-image: url(images/slide/20801.jpg);
+
+#midcontent_left>div.leftcontentstyle{
+	/*background-image: url(images/slide/20801.jpg);*/
 	display: block;
 }
+
 
 #midcontent_right{
 	width: 391px;

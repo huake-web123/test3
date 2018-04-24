@@ -65,35 +65,46 @@ $(document).ready(function(){
 			result;
 			var arr1 = result.data;
 			var str1 = '';
+			var str2 = '';
 			for(var i=0;i<arr1.length;i++){
 			if(i!=4){	
-				str1 +='<div >'+
+				str1 +='<div>'+
 												'<div class="MHz_style">'+
 													'<div class="MHz_text">'+result.data[i].title+'</div>'+
 													'<div class="MHz_img"></div>'+
 												'</div>'+
 												'<div class="pro_style">'+result.data[i].subtitle+'</div>'+
-												'<div class="popmusic">热门歌曲:</div>'+
+												'<div class="popmusic">热门歌曲：'+result.data[i].hotSongs.join('/')+'</div>'+
 												'<div class="musictext">'+result.data[i].songsCounts+'首歌曲兆赫详情</div>'+
 										   
 							'</div>';
+				str2 += '<div><img src="'+result.data[i].thumb+'"></div>';
+				
+						
 					}
 			else{
 
-				str1 +='<div class="MHz_show">'+
+				str1 += '<div class="MHz_show">'+
 												'<div class="MHz_style">'+
 													'<div class="MHz_text">'+result.data[i].title+'</div>'+
 													'<div class="MHz_img"></div>'+
 												'</div>'+
 												'<div class="pro_style">'+result.data[i].subtitle+'</div>'+
-												'<div class="popmusic">热门歌曲:</div>'+
+												'<div class="popmusic">热门歌曲：'+result.data[i].hotSongs.join('/')+'</div>'+
 												'<div class="musictext">'+result.data[i].songsCounts+'首歌曲兆赫详情</div>'+
 										   
 							'</div>';
+				str2 +='<div class="leftcontentstyle"><img src="'+result.data[i].thumb+'"></div>';
 				}
 			}
-			
+
+
+
+
+
+
 			$('#midrightcontent').html(str1);
+			$('#midcontent_left').html(str2);
 		});
 	});
 
