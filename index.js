@@ -21,22 +21,9 @@ $(document).ready(function(){
 		}
    	});
 
- 	$(".midheadstyle").hover(function(){
-		$(this).addClass("selected").siblings().removeClass("selected");
-		var index = $(this).index();
-		var $item = $("#midrightcontent>div").eq(index);
-		$item.show().siblings().hide();
-		var $leftContent = $("#midcontent_left>div").eq(index);
-		$leftContent.show().siblings().hide();
-	  });
+ 	
 
-	$(".popMHzcontent li").hover(function(){
-			$(this).find('.popMHz_introbox').show();
-			$(this).find('.popMHz_img').addClass('popMHz_img_selected');
-		},function(){
-			$(this).find('.popMHz_introbox').hide();
-			$(this).find('.popMHz_img').removeClass('popMHz_img_selected');
-	});
+	
     /*
 	* 显示登录框
 	* */
@@ -47,7 +34,9 @@ $(document).ready(function(){
 	$(".loginbox_close").click(function(){
 		$("#loginbox").hide();
 	});
-	$("#addBanner").click(function(){
+
+
+	function getMusicBanners(){
 		var arr = [1,2,3,4,5];
 		var str ='';
 		for(var i = 0;i<arr.length;i++){
@@ -98,15 +87,69 @@ $(document).ready(function(){
 				}
 			}
 
-
-
-
-
-
 			$('#midrightcontent').html(str1);
 			$('#midcontent_left').html(str2);
+			initBannersHoverEvents();
+
+
 		});
-	});
+	}
+
+	getMusicBanners();
+	function initBannersHoverEvents(){
+		$(".midheadstyle").hover(function(){
+		$(this).addClass("selected").siblings().removeClass("selected");
+		var index = $(this).index();
+		var $item = $("#midrightcontent>div").eq(index);
+		$item.show().siblings().hide();
+		var $leftContent = $("#midcontent_left>div").eq(index);
+		$leftContent.show().siblings().hide();
+	  });
+	}
+
+	function getMusicHotMhz(){
+		$.get("http://restaurant.yijiahotel.shop/test/musicHotMhz",function(result,status){
+			result;
+			var arr1 = result.data;
+			var str1 = '';
+			for(var i=0;i<arr1.length;i++){
+				str1 += '<li>'+
+				        '<div class="popMHz_img"><img src="'+result.data[i].thumb+'"></div>'+
+						'<div class="popMHz_music">'+
+							'<div class="popMHz_name">'+result.data[i].title+'</div>'+
+							'<div class="popMHz_text">8489首歌曲 兆赫详情</div>'+
+						'</div>'+
+						'<div class="popMHz_introbox">'+
+							'<div class="introstyle">'+
+								'<span class="popmusic_title">简介：</span>'+
+								'<span class="popmusic_example">'+result.data[i].subtitle+'</span>'+
+							'</div>'+
+							'<div class="musicstyle">'+
+								'<span class="popmusic_title">热门歌曲：</span>'+
+								'<span class="popmusic_example">'+result.data[i].hotSongs.join('/')+'</span>'+
+						    '</div>'+
+						    '</li>';
+
+			}
+			$('#hotMHz>ul').html(str1);
+			initPopMHzHoverEvents();
+		});
+	}
+	getMusicHotMhz();
+	function initPopMHzHoverEvents(){
+	$(".popMHzcontent li").hover(function(){
+			$(this).find('.popMHz_introbox').show();
+			$(this).find('.popMHz_img').addClass('popMHz_img_selected');
+		},function(){
+			$(this).find('.popMHz_introbox').hide();
+			$(this).find('.popMHz_img').removeClass('popMHz_img_selected');
+		});
+	}
+
+
+
+
+
 
 	$("#content .share").hover(function(){
 		$("#content .share").stop().animate({left:'830px',width:'260px'});
