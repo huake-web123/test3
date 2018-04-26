@@ -113,11 +113,13 @@ body{
 }
 #headcontent .searchbox{
 	float:right;
-	margin-top: 50px;
+	margin-top: 5px;
 	margin-left: 300px;
 	width: 182px;
 	height: 23px;
 	border: 1px solid #ccc;
+	margin-right: 30px;
+	
 
 }
 #headcontent .searchbox input{
@@ -307,7 +309,7 @@ body{
 }
 .popMHzcontent li{
 	margin-top:20px;
-	width: 200px;
+	width: 280px;
 	height: 50px;
 	position: relative;
 }
@@ -375,26 +377,7 @@ body{
 	height: 20px;
 }
 
-/*.popMHzcontent li .huayu{
-	background-image: url(images/slide/huayu.png);
-}
-.popMHzcontent li .oumei{
-	background-image: url(images/slide/oumei.png);
-}
-.popMHzcontent li .baling{
-	background-image: url(images/slide/baling.png);
-}
-.popMHzcontent li .kafei{
-	background-image: url(images/slide/kafei.png);
-}
-.popMHzcontent li .yueyu{
-	background-image: url(images/slide/yueyu.png);
-}
-.popMHzcontent li .popMHz_img_selected{
-
-	background-image: url(images/slide/07.png) /*!important;
-
-}*/
+/*当图片是可以更换时尽量不要使用背景图*/
 #hotMHz>ul{
 	height: 200px;
 }
@@ -402,10 +385,10 @@ body{
      float: left;
      width: 280px;
 }
-/*.popMHzcontent .popMHz_right{
-	float: left;
-    width: 280px;
-}*/
+#FastMHz>ul>li{
+     float: left;
+     width: 280px;
+}
 
 #rightcontent{
 	position: absolute;

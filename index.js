@@ -146,6 +146,38 @@ $(document).ready(function(){
 		});
 	}
 
+	function getMusicFastMhz(){
+		$.get("http://restaurant.yijiahotel.shop/test/musicHotMhz",function(result,status){
+			result;
+			var arr1 = result.data;
+			var str1 = '';
+			for (var i = 0; i <arr1.length; i++) {
+				str1 += '<li>'+
+				        '<div class="popMHz_img"><img src="'+result.data[i].thumb+'"></div>'+
+						'<div class="popMHz_music">'+
+							'<div class="popMHz_name">'+result.data[i].title+'</div>'+
+							'<div class="popMHz_text">8489首歌曲 兆赫详情</div>'+
+						'</div>'+
+						'<div class="popMHz_introbox">'+
+							'<div class="introstyle">'+
+								'<span class="popmusic_title">简介：</span>'+
+								'<span class="popmusic_example">'+result.data[i].subtitle+'</span>'+
+							'</div>'+
+							'<div class="musicstyle">'+
+								'<span class="popmusic_title">热门歌曲：</span>'+
+								'<span class="popmusic_example">'+result.data[i].hotSongs.join('/')+'</span>'+
+						    '</div>'+
+						    '</li>';
+
+			}
+			$('#FastMHz').html(str1);
+			initPopMHzHoverEvents();
+
+		});
+	}
+	getMusicFastMhz();
+
+
 
 
 
