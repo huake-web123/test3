@@ -178,8 +178,31 @@ $(document).ready(function(){
 	getMusicFastMhz();
 
 
+	$("#loginbox .loginfoot").click(function(){
+		var nameTxt = $("#loginName").val();
+		var pwdTxt = $("#loginPwd").val();
+		if(nameTxt=='' || pwdTxt==''){
+			alert("账号或者密码为空");
+		}
+		else{
+		$.post("https://restaurant.yijiahotel.shop/test/login",{name:nameTxt,pwd:pwdTxt},function(result){
+			result;
+			if(result.status_code==0){
+				var str = '';
+				str = nameTxt+'欢迎您登录本网站!';
+				$('#welcome').text(str).show();
+				$('#loginbox').hide();
+			}
+			else{
+				alert("登录失败");
+			}
 
+			})
+		}
 
+	});
+		
+	
 
 
 
