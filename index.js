@@ -10,7 +10,8 @@ $(document).ready(function(){
 	/*
 	* 点击左侧面板的滑块，实现面板的展示和隐藏
 	* */
-  	$("#siderbar").click(function(){
+
+	$('body').on('click','#siderbar',function () {
 		if($(this).hasClass('siderbar_right')){
 			$(this).removeClass("siderbar_right").addClass("siderbar_left")
 			$("#hidebox").animate({left:"0px"});
@@ -19,20 +20,28 @@ $(document).ready(function(){
 			$(this).addClass("siderbar_right").removeClass("siderbar_left")
 			$("#hidebox").animate({left:"-650px"});
 		}
-   	});
-
- 	
-
-	
-    /*
-	* 显示登录框
-	* */
-	$("#login_enter").click(function(){
-		$("#loginbox").show();
 	});
 
-	$(".loginbox_close").click(function(){
+	/*
+	* 显示登录框
+	* */
+	$('body').on('click','#login_enter',function(){
+		$("#loginbox").show();
+	});
+	$('body').on('click','.loginbox_close',function(){
 		$("#loginbox").hide();
+	});
+
+
+	$('body').on('mouseover mouseout','.midheadstyle',function(event){
+		if (event.type == 'mouseover') {
+			$(this).addClass("selected").siblings().removeClass("selected");
+			var index = $(this).index();
+			var $item = $("#midrightcontent>div").eq(index);
+			$item.show().siblings().hide();
+			var $leftContent = $("#midcontent_left>div").eq(index);
+			$leftContent.show().siblings().hide();
+		}
 	});
 
 
@@ -89,23 +98,12 @@ $(document).ready(function(){
 
 			$('#midrightcontent').html(str1);
 			$('#midcontent_left').html(str2);
-			initBannersHoverEvents();
-
-
 		});
 	}
 
-	getMusicBanners();
-	function initBannersHoverEvents(){
-		$(".midheadstyle").hover(function(){
-		$(this).addClass("selected").siblings().removeClass("selected");
-		var index = $(this).index();
-		var $item = $("#midrightcontent>div").eq(index);
-		$item.show().siblings().hide();
-		var $leftContent = $("#midcontent_left>div").eq(index);
-		$leftContent.show().siblings().hide();
-	  });
-	}
+	
+    getMusicBanners();
+
 
 	function getMusicHotMhz(){
 		$.get("http://restaurant.yijiahotel.shop/test/musicHotMhz",function(result,status){
@@ -171,7 +169,7 @@ $(document).ready(function(){
 
 			}
 			$('#FastMHz').html(str1);
-			initPopMHzHoverEvents();
+			// initPopMHzHoverEvents();
 
 		});
 	}
