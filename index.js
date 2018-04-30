@@ -31,8 +31,8 @@ $(document).ready(function(){
 	$('body').on('click','.loginbox_close',function(){
 		$("#loginbox").hide();
 	});
-
-
+ 
+	/*点击1到5更换相应内容*/
 	$('body').on('mouseover mouseout','.midheadstyle',function(event){
 		if (event.type == 'mouseover') {
 			$(this).addClass("selected").siblings().removeClass("selected");
@@ -43,8 +43,61 @@ $(document).ready(function(){
 			$leftContent.show().siblings().hide();
 		}
 	});
+	/*鼠标移上去出现简介框，移走消失*/
+	$('body').on('mouseover mouseout','.popMHzcontent li',function(event){
+		if(event.type == 'mouseover'){
+			$(this).find('.popMHz_introbox').show();
+			$(this).find('.popMHz_img').addClass('popMHz_img_selected');
+		}
+		else{
+			$(this).find('.popMHz_introbox').hide();
+			$(this).find('.popMHz_img').removeClass('popMHz_img_selected');
+		}
+	});
 
+	/*点击登录，输入用户名和密码，会出现正确或错误的反应*/
+	$('body').on('click','#loginbox .loginfoot',function(){
+		var nameTxt = $("#loginName").val();
+		var pwdTxt = $("#loginPwd").val();
+		if(nameTxt=='' || pwdTxt==''){
+			alert("账号或者密码为空");
+		}
+		else{
+		$.post("https://restaurant.yijiahotel.shop/test/login",{name:nameTxt,pwd:pwdTxt},function(result){
+			result;
+			if(result.status_code==0){
+				var str = '';
+				str = nameTxt+'欢迎您登录本网站!';
+				$('#welcome').text(str).show();
+				$('#loginbox').hide();
+			}
+			else{
+				alert("登录失败");
+			}
 
+			})
+		}
+	});
+	/*鼠标放上分享所在位置，会有图标出现，移走消失*/
+	$('body').on('mouseover mouseout','#content .share',function(event){
+		if(event.type == 'mouseover'){
+			$("#content .share").stop().animate({left:'830px',width:'260px'});
+		}
+		else{
+			$("#content .share").stop().animate({left:'1024px',width:'60px'});
+		}
+
+	});
+	/*豆瓣客户端右边的图，鼠标放上去更换图片效果，移走还原*/
+	$('body').on('mouseover mouseout','#footer .icon .iconimg',function(event){
+		if(event.type == 'mouseover'){
+			$(this).addClass('selected');
+		}
+		else{
+			$(this).removeClass('selected');
+		}
+	});
+	/*取得音乐滑动条的数据，并给函数命名*/
 	function getMusicBanners(){
 		var arr = [1,2,3,4,5];
 		var str ='';
@@ -101,7 +154,7 @@ $(document).ready(function(){
 		});
 	}
 
-	
+	/*调用函数*/
     getMusicBanners();
 
 
@@ -130,20 +183,11 @@ $(document).ready(function(){
 
 			}
 			$('#hotMHz>ul').html(str1);
-			initPopMHzHoverEvents();
+			
 		});
 	}
 	getMusicHotMhz();
-	function initPopMHzHoverEvents(){
-	$(".popMHzcontent li").hover(function(){
-			$(this).find('.popMHz_introbox').show();
-			$(this).find('.popMHz_img').addClass('popMHz_img_selected');
-		},function(){
-			$(this).find('.popMHz_introbox').hide();
-			$(this).find('.popMHz_img').removeClass('popMHz_img_selected');
-		});
-	}
-
+	
 	function getMusicFastMhz(){
 		$.get("http://restaurant.yijiahotel.shop/test/musicHotMhz",function(result,status){
 			result;
@@ -169,51 +213,8 @@ $(document).ready(function(){
 
 			}
 			$('#FastMHz').html(str1);
-			// initPopMHzHoverEvents();
-
+			
 		});
 	}
 	getMusicFastMhz();
-
-
-	$("#loginbox .loginfoot").click(function(){
-		var nameTxt = $("#loginName").val();
-		var pwdTxt = $("#loginPwd").val();
-		if(nameTxt=='' || pwdTxt==''){
-			alert("账号或者密码为空");
-		}
-		else{
-		$.post("https://restaurant.yijiahotel.shop/test/login",{name:nameTxt,pwd:pwdTxt},function(result){
-			result;
-			if(result.status_code==0){
-				var str = '';
-				str = nameTxt+'欢迎您登录本网站!';
-				$('#welcome').text(str).show();
-				$('#loginbox').hide();
-			}
-			else{
-				alert("登录失败");
-			}
-
-			})
-		}
-
-	});
-		
-	
-
-
-
-	$("#content .share").hover(function(){
-		$("#content .share").stop().animate({left:'830px',width:'260px'});
-	},function(){
-		$("#content .share").stop().animate({left:'1024px',width:'60px'});
-	});
-
-	$("#footer .icon .iconimg").hover(function(){
-		$(this).addClass('selected');
-	},function(){
-		$(this).removeClass('selected');
-	});
-
 });

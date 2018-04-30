@@ -350,6 +350,12 @@ body{
 	height: 45px;
 	float: left;
 }
+/*.popMHzcontent li .popMHz_img_selected{
+	background-image: url("images/slide/07.png");
+	background-size: 45px 45px;
+	z-index: 9999;
+}*/
+
 .popMHzcontent li .popMHz_img>img{
 	width: 45px;
 	height: 45px;
