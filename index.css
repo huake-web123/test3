@@ -290,6 +290,7 @@ body{
 .popMHz .popular{
 	font-size: 14px;
 	float: left;
+	color: red;
 }
 .popMHz .more{
 	font-size: 14px;
