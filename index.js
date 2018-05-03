@@ -213,7 +213,7 @@ $(document).ready(function(){
 						    '</li>';
 
 			}
-			$('#FastMHz').html(str1);
+			$('#FastMHz>ul').html(str1);
 			
 		});
 	}
