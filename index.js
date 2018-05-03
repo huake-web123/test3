@@ -47,11 +47,12 @@ $(document).ready(function(){
 	$('body').on('mouseover mouseout','.popMHzcontent li',function(event){
 		if(event.type == 'mouseover'){
 			$(this).find('.popMHz_introbox').show();
-			$(this).find('.popMHz_img').addClass('popMHz_img_selected');
+			$(this).find('.popMHz_img>img').attr('src','images/slide/07.png');
 		}
 		else{
 			$(this).find('.popMHz_introbox').hide();
-			$(this).find('.popMHz_img').removeClass('popMHz_img_selected');
+			var originSrc=$(this).find('.popMHz_img>img').attr('data-origin');
+			$(this).find('.popMHz_img>img').attr('src',originSrc);
 		}
 	});
 
@@ -165,7 +166,7 @@ $(document).ready(function(){
 			var str1 = '';
 			for(var i=0;i<arr1.length;i++){
 				str1 += '<li>'+
-				        '<div class="popMHz_img"><img src="'+result.data[i].thumb+'"></div>'+
+				        '<div class="popMHz_img"><img data-origin="'+result.data[i].thumb+'" src="'+result.data[i].thumb+'"></div>'+
 						'<div class="popMHz_music">'+
 							'<div class="popMHz_name">'+result.data[i].title+'</div>'+
 							'<div class="popMHz_text">8489首歌曲 兆赫详情</div>'+
@@ -195,7 +196,7 @@ $(document).ready(function(){
 			var str1 = '';
 			for (var i = 0; i <arr1.length; i++) {
 				str1 += '<li>'+
-				        '<div class="popMHz_img"><img src="'+result.data[i].thumb+'"></div>'+
+				        '<div class="popMHz_img"><img data-origin="'+result.data[i].thumb+'" src="'+result.data[i].thumb+'"></div>'+
 						'<div class="popMHz_music">'+
 							'<div class="popMHz_name">'+result.data[i].title+'</div>'+
 							'<div class="popMHz_text">8489首歌曲 兆赫详情</div>'+
