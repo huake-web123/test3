@@ -14,11 +14,11 @@ $(document).ready(function(){
 	$('body').on('click','#siderbar',function () {
 		if($(this).hasClass('siderbar_right')){
 			$(this).removeClass("siderbar_right").addClass("siderbar_left")
-			$("#hidebox").animate({left:"0px"});
+			$("#hidebox").addClass('selected');
 		}
 		else{
 			$(this).addClass("siderbar_right").removeClass("siderbar_left")
-			$("#hidebox").animate({left:"-650px"});
+			$("#hidebox").removeClass('selected');
 		}
 	});
 

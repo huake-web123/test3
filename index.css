@@ -86,6 +86,13 @@ body{
 .siderbar_left{
 	background-image: url(images/sidebar_icon.png);
 }
+#hidebox{
+	transition:left 0.3s;
+}
+
+/*@keyframes myfirst{
+	to{left:0;}
+}*/
 .hideboxstyle{
       position:absolute;
       top:0;
@@ -95,7 +102,12 @@ body{
       width:666px;
       z-index: 1;
       box-shadow:10px 0 10px 0 rgba(0,0,0,0.1);
-     
+     }
+#hidebox.selected{
+	left:0;
+	/*animation: myfirst 0.3s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;*/
 }
 #wholecontent{
 	overflow-x: hidden;
