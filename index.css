@@ -105,16 +105,16 @@ body{
 #headcontent{
 	width:650px;
 	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
-#headcontent p{
-	float:left;
+#headcontent .Mhz-text{
 	margin-left:100px;
-	margin-top:50px;
 }
 #headcontent .searchbox{
-	float:right;
-	margin-top: 5px;
-	margin-left: 300px;
+	display: flex;
+	margin-left: 30px;
 	width: 182px;
 	height: 23px;
 	border: 1px solid #ccc;
@@ -123,7 +123,6 @@ body{
 
 }
 #headcontent .searchbox input{
-	float: left;
 	width: 152px;
 	height: 21px;
 	border:0 none;
@@ -132,7 +131,6 @@ body{
    
 }
 #headcontent .searchbox .searchimg{
-	float: right;
 	width: 24px;
 	height: 34px;
 	background-image: url(images/search_btn.png);
@@ -142,11 +140,11 @@ body{
 #midcontent{
 	width: 666px;
 	height: 230px;
+	display: flex;
 }
 #midcontent_left{
 	width: 275px;
 	height:230px;
-	float:left;
 }
 #midcontent_left>div{
 	width: 275px;
@@ -166,7 +164,6 @@ body{
 #midcontent_right{
 	width: 391px;
 	height:230px;
-	float:left;
 	background-color: rgb(225,233,230);
 }
 
@@ -265,13 +262,12 @@ body{
 
 #music-class ul,li{
   margin:0;
-  
   padding: 0;
   list-style: none;
-  float: left;
 }
 #music-class ul{
 	margin-top: 10px;
+	display: flex;
 }
 #music-class li{
 	border-right: 1px solid #ccc;
