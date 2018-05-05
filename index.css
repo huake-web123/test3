@@ -682,4 +682,10 @@ body{
 }
 .a{
 	color:red;
+	font-size: 14px;
 }
+.b{
+	font-size: 16px;
+	color: green;
+}
+
