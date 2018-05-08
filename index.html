@@ -5,6 +5,7 @@
 	<title>豆瓣FM</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript" src="axios.min.js"></script>
 </head>
 <body>
 
@@ -34,7 +35,15 @@
 							</ul>
 						</div>
 						<div id="midrightcontent">
-							
+							<div v-for="(item,index) in bannerArr"  v-bind:class="{MHz_show:index==0}">
+								<div class="MHz_style">
+									<div class="MHz_text">{{item.title}}</div>
+									<div class="MHz_img"></div>
+								</div>
+								<div class="pro_style">{{item.subtitle}}</div>
+								<div class="popmusic">热门歌曲：'+result.data[i].hotSongs.join('/')+'</div>
+								<div class="musictext">{{item.songsCounts}}首歌曲兆赫详情</div>
+							</div>
 						</div>
 					</div>
 				</div>
