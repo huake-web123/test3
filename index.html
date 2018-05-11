@@ -28,18 +28,24 @@
 				<div id="midcontent">
 					<div  id="midcontent_left">
 						
-						<div v-for="(item,index) in bannerArr" v-if="index == 0" class="leftcontentstyle"><img v-bind:src="item.thumb"></div>
-						<div v-else>
+						<div v-for="(item,index) in bannerArr" v-bind:class="{leftcontentstyle:index == currentIndex}">
 							<img v-bind:src="item.thumb">
 						</div>
 					</div>
 					<div id="midcontent_right">
 						<div id="midhead">
 							<ul>
+								<li v-for="(item,index) in arr" 
+									v-bind:class="{selected:index == currentIndex}" 
+									@mouseover="pageNumEnter(index)"
+									@mouseout="pageNumOut(index)"
+									class="midheadstyle">
+									{{item}}
+								</li>
 							</ul>
 						</div>
 						<div id="midrightcontent">
-							<div v-for="(item,index) in bannerArr"  v-bind:class="{MHz_show:index==0}">
+							<div v-for="(item,index) in bannerArr"  v-bind:class="{MHz_show:index == currentIndex}">
 								<div class="MHz_style">
 									<div class="MHz_text">{{item.title}}</div>
 									<div class="MHz_img"></div>
@@ -52,8 +58,8 @@
 					</div>
 				</div>
 				<div id="music-class">
-					<ul >
-						<li>{{musicClassArr.name}}</li>
+					<ul>
+						<li v-for="music in musicClassArr">{{music.name}}</li>
 					</ul>
 					<ul>
 				        <li>拉丁</li>
