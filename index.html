@@ -26,8 +26,12 @@
 					</div>
 				</div>
 				<div id="midcontent">
-					<div id="midcontent_left">
+					<div  id="midcontent_left">
 						
+						<div v-for="(item,index) in bannerArr" v-if="index == 0" class="leftcontentstyle"><img v-bind:src="item.thumb"></div>
+						<div v-else>
+							<img v-bind:src="item.thumb">
+						</div>
 					</div>
 					<div id="midcontent_right">
 						<div id="midhead">
@@ -41,7 +45,7 @@
 									<div class="MHz_img"></div>
 								</div>
 								<div class="pro_style">{{item.subtitle}}</div>
-								<div class="popmusic">热门歌曲：'+result.data[i].hotSongs.join('/')+'</div>
+								<div class="popmusic">热门歌曲：{{item.hotSongs.join('/')}}</div>
 								<div class="musictext">{{item.songsCounts}}首歌曲兆赫详情</div>
 							</div>
 						</div>
@@ -49,7 +53,7 @@
 				</div>
 				<div id="music-class">
 					<ul >
-						<li v-for="item in musicClassArr">{{item.name}}</li>
+						<li>{{musicClassArr.name}}</li>
 					</ul>
 					<ul>
 				        <li>拉丁</li>
@@ -64,7 +68,22 @@
 				</div>
 				<div id="hotMHz"  class="popMHzcontent">
 					<ul>
-
+						<li v-for="(item,index) in hotMhzArr">
+				        <div class="popMHz_img"><img data-origin="item.thumb" v-bind:src="item.thumb"></div>
+						<div class="popMHz_music">
+							<div class="popMHz_name">{{item.title}}</div>
+							<div class="popMHz_text">8489首歌曲 兆赫详情</div>
+						</div>
+						<div class="popMHz_introbox">
+							<div class="introstyle">
+								<span class="popmusic_title">简介：</span>
+								<span class="popmusic_example">{{item.subtitle}}</span>
+							</div>
+							<div class="musicstyle">
+								<span class="popmusic_title">热门歌曲：</span>
+								<span class="popmusic_example">{{item.hotSongs.join('/')}}</span>
+						    </div>
+						</li>
 					</ul>
 				</div>
 			    
@@ -75,7 +94,22 @@
 				</div>
 				<div id="FastMHz"  class="popMHzcontent">
 					<ul>
-						
+						<li v-for="(item,index) in fastMhzArr"> 
+				        <div class="popMHz_img"><img data-origin="item.thumb" v-bind:src="item.thumb"></div> 
+						<div class="popMHz_music"> 
+							<div class="popMHz_name">{{item.title}}</div> 
+							<div class="popMHz_text">8489首歌曲 兆赫详情</div> 
+						</div>
+						<div class="popMHz_introbox"> 
+							<div class="introstyle"> 
+								<span class="popmusic_title">简介：</span> 
+								<span class="popmusic_example">{{item.subtitle}}</span> 
+							</div> 
+							<div class="musicstyle"> 
+								<span class="popmusic_title">热门歌曲：</span> 
+								<span class="popmusic_example">{{item.hotSongs.join('/')}}</span> 
+						    </div> 
+						    </li> 
 					</ul>
 				</div>
 			</div>

@@ -158,18 +158,19 @@ body{
 	width: 275px;
 	height:230px;
 }
-#midcontent_left>div{
+#midcontent_left div{
 	width: 275px;
 	height:230px;
 	background-size: 290px 230px;
 	display: none;
 }
-#midcontent_left>div>img{
+#midcontent_left img{
 	width: 290px;
 	height: 230px;
+	/*display: none;*/
 }
 
-#midcontent_left>div.leftcontentstyle{
+#midcontent_left .leftcontentstyle{
 	display: block;
 }
 
