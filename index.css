@@ -568,7 +568,7 @@ body{
 	left:400px;
 	top:180px;
 	z-index: 999;
-	display: none;
+	/*display: none;*/
 	/*width: 500px;*/
 	
 }

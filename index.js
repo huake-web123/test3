@@ -18,7 +18,10 @@ var myVue = new Vue({
     hotMhzArr:[],
     fastMhzArr:[],
     introEnd:-1,
-    sidebar:false
+    sidebar:false,
+    loginstart:false,
+    userName:'',
+    userPwd:''
   },
   methods:{
   	pageNumEnter:function(index) {
@@ -35,6 +38,31 @@ var myVue = new Vue({
   	},
   	sideBox:function(){
   		this.sidebar = !this.sidebar;
+  	},
+  	loginEnter:function(){
+  		this.loginstart = true;
+  	},
+  	loginExit:function(){
+  		this.loginstart = false;
+  	},
+  	doLogin:function(){
+  		axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+  		if(this.userName=='' || this.userPwd==''){
+  			alert("账号或者密码为空");
+  		}
+  		else{
+  			axios.post('https://restaurant.yijiahotel.shop/test/login', {
+			    name: this.userName,
+			    pwd: this.userPwd
+			  })
+			  .then(function (response) {
+			    console.log(response);
+			  })
+			  .catch(function (error) {
+			    console.log(error);
+			  });
+
+  		}
   	}
 
   }
