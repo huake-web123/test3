@@ -13,9 +13,9 @@
 
 		<span>{{message}}</span>
 
-		<div id="hidebox" class="hideboxstyle selected">
+		<div id="hidebox" class="hideboxstyle" v-bind:class="{selected:sidebar}">
 			<div id="rightsider">
-			       <div id="siderbar" class="siderbar_right"></div>
+			       <div id="siderbar" v-on:click="sideBox" class="siderbar_right" v-bind:class="{siderbar_left:sidebar}"></div>
 		    </div>
 			<div id="wholecontent">
 				<div id="headcontent">
@@ -74,21 +74,28 @@
 				</div>
 				<div id="hotMHz"  class="popMHzcontent">
 					<ul>
-						<li v-for="(item,index) in hotMhzArr">
-				        <div class="popMHz_img"><img data-origin="item.thumb" v-bind:src="item.thumb"></div>
-						<div class="popMHz_music">
-							<div class="popMHz_name">{{item.title}}</div>
-							<div class="popMHz_text">8489首歌曲 兆赫详情</div>
-						</div>
-						<div class="popMHz_introbox">
-							<div class="introstyle">
-								<span class="popmusic_title">简介：</span>
-								<span class="popmusic_example">{{item.subtitle}}</span>
+						<li v-for="(item,index) in hotMhzArr" 
+								@mouseover="introboxShow(index)"
+								@mouseout="introboxHide(index)" >
+					        <div class="popMHz_img"> 
+					        	<img v-if="introEnd != index" v-bind:src="item.thumb">
+					        	<img v-else src="images/slide/07.png">
+					        </div>
+							<div class="popMHz_music">
+								<div class="popMHz_name">{{item.title}}</div>
+								<div class="popMHz_text">8489首歌曲 兆赫详情</div>
 							</div>
-							<div class="musicstyle">
-								<span class="popmusic_title">热门歌曲：</span>
-								<span class="popmusic_example">{{item.hotSongs.join('/')}}</span>
-						    </div>
+							<div  v-show="introEnd == index" 
+								class="popMHz_introbox">
+								<div class="introstyle">
+									<span class="popmusic_title">简介：</span>
+									<span class="popmusic_example">{{item.subtitle}}</span>
+								</div>
+								<div class="musicstyle">
+									<span class="popmusic_title">热门歌曲：</span>
+									<span class="popmusic_example">{{item.hotSongs.join('/')}}</span>
+							    </div>
+							</div>
 						</li>
 					</ul>
 				</div>

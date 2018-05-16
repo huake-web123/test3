@@ -16,7 +16,9 @@ var myVue = new Vue({
     arr:[1,2,3,4,5],
     currentIndex:0,
     hotMhzArr:[],
-    fastMhzArr:[]
+    fastMhzArr:[],
+    introEnd:-1,
+    sidebar:false
   },
   methods:{
   	pageNumEnter:function(index) {
@@ -24,7 +26,17 @@ var myVue = new Vue({
   	},
   	pageNumOut:function() {
   		
+  	},
+  	introboxShow:function(index){
+  		this.introEnd = index;
+  	},
+  	introboxHide:function(){
+  		this.introEnd = -1;
+  	},
+  	sideBox:function(){
+  		this.sidebar = !this.sidebar;
   	}
+
   }
 })
 /*获取banner的数据*/

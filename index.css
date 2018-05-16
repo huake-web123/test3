@@ -334,7 +334,7 @@ body{
 	border: 1px solid #ccc;
 	background-color: #fff;
 	z-index: 222;
-	display: none;
+	/*display: none;*/
 	padding-left: 10px;
 	padding-right: 10px;
 	box-sizing: border-box;
