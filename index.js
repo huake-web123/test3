@@ -3,7 +3,7 @@
 * */
 /**
  * Created by hanjinxiu@bmkp.cn on 2018/4/19.
- * 写出作者，如果别人有疑问，别人可以找到你咨询
+ * 写出作者，如果别人有疑问，别人可以找到你咨询。添加一句测试
  */
 
 var myVue = new Vue({
